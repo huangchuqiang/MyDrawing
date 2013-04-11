@@ -37,30 +37,30 @@ Drawing::~Drawing()
 
 void Drawing::createMenus()
 {
-	m_insertMenu = menuBar()->addMenu(tr("插入图形"));
+	m_insertMenu = menuBar()->addMenu(tr("insert graphics(插入图形)"));
 	m_insertMenu->addAction(m_insertRect);
 	m_insertMenu->addAction(m_insertEllipse);
 	m_insertMenu->addAction(m_insertTriangle);
 
-	m_groupMenu = menuBar()->addMenu(tr("组合图形"));
+	m_groupMenu = menuBar()->addMenu(tr("group graphics(组合图形)"));
 	m_groupMenu->addAction(m_group);
 	m_groupMenu->addAction(m_separate);
 }
 void Drawing::createActions()
 {
-	m_insertRect = new QAction(tr("矩形"), this);
+	m_insertRect = new QAction(tr("rectangular(矩形)"), this);
 	connect(m_insertRect, SIGNAL(triggered()), this, SLOT(selectRect()));
 
-	m_insertEllipse = new QAction(tr("椭圆"), this);
+	m_insertEllipse = new QAction(tr("ellipse(椭圆)"), this);
 	connect(m_insertEllipse, SIGNAL(triggered()), this, SLOT(selectEllipse()));
 
-	m_insertTriangle = new QAction(tr("三角形"), this);
+	m_insertTriangle = new QAction(tr("trangle(三角形)"), this);
 	connect(m_insertTriangle, SIGNAL(triggered()), this, SLOT(selectTriangle()));
 
-	m_group = new QAction(tr("组合"), this);
+	m_group = new QAction(tr("group(组合)"), this);
 	connect(m_group, SIGNAL(triggered()), this, SLOT(groupGraphs()));
 
-	m_separate = new QAction(tr("分离"), this);
+	m_separate = new QAction(tr("detach(分离)"), this);
 	connect(m_separate, SIGNAL(triggered()), this, SLOT(separateGraphs()));
 }
 CGraphItem* Drawing::newGraphItem(const SHAPE &shape)
